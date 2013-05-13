@@ -12,6 +12,7 @@ def print_tweet_sentiments(data, sents):
     tweet = json.loads(item) 
     if 'text' in tweet:
       sent = calc_sent(tweet['text'], sents)
+      print sent
 
 def calc_sent(tweet, sents):
   words = tweet.split()
@@ -19,13 +20,12 @@ def calc_sent(tweet, sents):
   for item in words:
     if item in sents:
       sent = sent + sents[item]
-  print sent
+  return sent
 
 def main():
   sent_file = open(sys.argv[1])
   tweet_file = open(sys.argv[2])
   sent_dict = make_sent_dict(sent_file)
-  # print sent_dict['bastard']
   print_tweet_sentiments(tweet_file, sent_dict)
 
 if __name__ == '__main__':
