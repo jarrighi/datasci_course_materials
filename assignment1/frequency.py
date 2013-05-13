@@ -17,7 +17,7 @@ def print_word_frequencies(tweet_file):
           total_count += 1
   for word in word_counts:
     print word,
-    print float(word_counts[word] / total_count)
+    print float(word_counts[word]) / float(total_count)
 
     
 
