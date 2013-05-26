@@ -2,7 +2,7 @@ import MapReduce
 import sys
 
 """
-Word Count Example in the Simple Python MapReduce Framework
+Inverted Index Example in the Simple Python MapReduce Framework
 """
 
 mr = MapReduce.MapReduce()
@@ -11,8 +11,8 @@ mr = MapReduce.MapReduce()
 # Do not modify above this line
 
 def mapper(record):
-    # key: document identifier
-    # value: document contents
+    # key: document identifier as a string
+    # value: document contents as a string
     key = record[0]
     value = record[1]
     words = value.split()

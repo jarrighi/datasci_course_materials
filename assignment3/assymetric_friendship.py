@@ -2,7 +2,7 @@ import MapReduce
 import sys
 
 """
-Word Count Example in the Simple Python MapReduce Framework
+Asymmetric Friendship Example in the Simple Python MapReduce Framework
 """
 
 mr = MapReduce.MapReduce()
@@ -19,8 +19,8 @@ def mapper(record):
     mr.emit_intermediate(friend + " " + person, 1)
 
 def reducer(key, list_of_values):
-    # key: word
-    # value: list of occurrence counts
+    # key: person's name as a string
+    # list of values: all friends of person, list of strings
     total = 0
     for v in list_of_values:
       total += v
